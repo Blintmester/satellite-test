@@ -32,6 +32,7 @@ resource "ibm_satellite_cluster" "create_cluster" {
 
   default_worker_pool_labels = (var.default_worker_pool_labels != null ? var.default_worker_pool_labels : null)
   tags                       = (var.tags != null ? var.tags : null)
+  calico_ip_autodetection = (var.calico_ip_autodetection != null ? var.calico_ip_autodetection : null)
 
   timeouts {
     create = (var.create_timeout != null ? var.create_timeout : null)

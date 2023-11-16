@@ -15,6 +15,10 @@ resource "ibm_satellite_location" "create_location" {
     bucket = (var.location_bucket != null ? var.location_bucket : null)
     region = (var.ibm_region != null ? var.ibm_region : null)
   }
+
+  # new functionality
+  pod_subnet = var.pod_subnet
+  service_subnet = var.service_subnet
 }
 
 data "ibm_satellite_location" "location" {

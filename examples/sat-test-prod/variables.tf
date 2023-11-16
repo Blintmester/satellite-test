@@ -78,7 +78,7 @@ variable "pod_subnet" {
 
 variable "service_subnet" {
   type = string
-  default = "192.168.69.0/24"
+  default = null
 }
 
 ##################################################
@@ -268,6 +268,12 @@ variable "delete_timeout" {
   type        = string
   description = "Timeout duration for delete."
   default     = null
+}
+
+variable "calico_ip_autodetection" {
+  description = "Set IP autodetection to use correct interface for Calico"
+  type        = map(string)
+  default = null
 }
 
 ##################################################

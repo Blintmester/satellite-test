@@ -8,9 +8,9 @@
 ###################################################################
 module "satellite-cluster" {
   //Uncomment following line to point the source to registry level module
-  source = "terraform-ibm-modules/satellite/ibm//modules/cluster"
+  //source = "terraform-ibm-modules/satellite/ibm//modules/cluster"
 
-  //source = "../../modules/cluster"
+  source = "../../modules/cluster"
 
   depends_on                 = [module.satellite-host]
   create_cluster             = var.create_cluster
@@ -27,6 +27,7 @@ module "satellite-cluster" {
   update_timeout             = var.update_timeout
   delete_timeout             = var.delete_timeout
   operating_system           = var.operating_system
+  calico_ip_autodetection    = var.calico_ip_autodetection
 }
 
 ###################################################################
